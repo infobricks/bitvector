@@ -1,0 +1,12 @@
+require 'ffi-compiler/compile_task'
+
+FFI::Compiler::CompileTask.new("bitvector") do |c|
+  c.have_header?('stdlib.h', '/usr/local/include')
+  c.have_header?('math.h', '/usr/local/include')
+  c.have_header?('limits.h', '/usr/local/include')
+  c.have_header?('string.h', '/usr/local/include')
+  c.have_header?('stdbool.h', '/usr/local/include')
+  c.have_header?('unistd.h', '/usr/local/include')
+  c.have_func?('puts')
+  c.have_library('z')
+end
